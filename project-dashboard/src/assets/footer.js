@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 
 export default class Footer extends Component {
+    /**
+     * @description method untuk menampilkan footer pada halaman dashboard
+     */
     render() {
         return (
             <div>
