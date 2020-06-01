@@ -55,7 +55,6 @@ render() {
 
 // Event to send and save data to the database on the Node.js server
 sendSave(){
-
   if (this.state.selectRole==0) {
     alert("Pilih Role")
   }
