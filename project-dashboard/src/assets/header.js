@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 
 export default class Header extends Component {
+    /**
+     * @description method untuk menampilkan header pada halaman dashboard
+     */
     render() {
         return (
             <div>

@@ -4,6 +4,10 @@ import CreateUser from './create.user';
 import Config from '../config/config';
 
 class readUser extends Component {
+  /**
+   * @description konstruktor kelas konten
+   * @param {*} props untuk menampung daftar user yang terdapat pada database
+   */
   constructor(props){
     super(props);
     this.state = {
@@ -11,6 +15,9 @@ class readUser extends Component {
     }
   }
 
+  /**
+   * @description method untuk memanggil dan memanipulasi data agar data dapat ditampil sesuai dengan paging short, limit entry
+   */
   componentDidMount(){
      this.loadUser()
      const script = document.createElement("script");
@@ -21,9 +28,11 @@ class readUser extends Component {
         document.body.appendChild(script);
   }
 
+  /**
+   * @description method untuk memanggil dan memanipulasi data dari database ke server
+   */
   loadUser(){
     const url = Config.baseUrl+"/user/list"
-
     axios.get(url)
     .then(res=>{
       if (res.data.success) {
@@ -39,6 +48,9 @@ class readUser extends Component {
     })
   } 
 
+    /**
+     * @description method untuk manampilkan tabel daftar user pada halaman dashboard
+     */
     render() {
         return (
             <div>
@@ -118,8 +130,10 @@ class readUser extends Component {
         );
     }
 
+    /**
+     * @description method untuk memanggil sesuai dengan permintaan kedalam tabel
+     */
     loadFillData(){
-
       return this.state.listUser.map((data)=>{
         return(
           <tr>
@@ -127,7 +141,6 @@ class readUser extends Component {
             <td>{data.email}</td>
             <td>{data.phone}</td>
             <td>{data.role.role}</td>
-            
           </tr>
         )
       })
