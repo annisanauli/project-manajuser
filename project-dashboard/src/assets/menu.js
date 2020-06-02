@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 
 export default class Menu extends Component {
+     /**
+     * @description method untuk menampilkan menu pada halaman dashboard
+     */
     render() {
         return (
             <div>
