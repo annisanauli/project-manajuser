@@ -3,6 +3,15 @@ import axios from 'axios';
 import Config from '../config/config';
 
 class createUser extends Component{
+  /**
+   * @description konstruktor kelas form
+   * @param {string} campName variabel untuk menampung nama user
+   * @param {string} campEmail variabel untuk menampung email user
+   * @param {string} campPhone variabel untuk menampung no headphone user 
+   * @param {string} campPassword variabel untuk menampung password user
+   * @param {Integer} selectRole variabel untuk menampung role user 
+   * 
+   */
   constructor(props){
     super(props);
     this.state = {
@@ -14,6 +23,9 @@ class createUser extends Component{
     }
   }
 
+  /**
+     * @description method untuk menampilkan form create user
+     */  
 render() {
     return (
         <div>
@@ -53,7 +65,10 @@ render() {
     )
 }
 
-// Event to send and save data to the database on the Node.js server
+/**
+  * @description method untuk mengirim dan menyimpan data parameter ke database pada server\
+  * dan juga memberikan alert apabila ada kolom yang kosong
+*/
 sendSave(){
   if (this.state.selectRole==0) {
     alert("Pilih Role")
