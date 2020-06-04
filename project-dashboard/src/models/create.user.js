@@ -113,8 +113,6 @@ sendSave(){
     })
 
   }
-
-  window.location.href="http:localhost:3001";
 }
 }
 export default createUser;
