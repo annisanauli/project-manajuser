@@ -14,7 +14,10 @@ var User = sequelize.define(
         name: Sequelize.STRING,
         email: Sequelize.STRING,
         password: Sequelize.STRING,
-        phone: Sequelize.BIGINT,
+        phone: {
+            type : Sequelize.BIGINT,
+            zerofill : true,
+        },
         roleId: {
         type: Sequelize.INTEGER,
         // This is a reference to another model
