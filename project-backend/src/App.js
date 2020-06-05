@@ -15,7 +15,7 @@ app.use((req, res, next) => {
   next();
 });
 //Route
-app.use('/user',userRouters)
+app.use('/',userRouters)
 app.use('/',(req,res)=>{
   res.send("Hello World form NodeJS express.");
 });
