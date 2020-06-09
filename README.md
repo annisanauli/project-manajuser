@@ -9,8 +9,11 @@ atau menjalankan perintah :
 ```
 $ git clone https://github.com/annisanauli/project-manajuser.git
 ```
+## Database 
+Import file database ``` manajuser_db.sql``` ke localhost phpMyAdmin
+
 ### Backend
-Selanjutnya jalankan backend perintah 
+Selanjutnya jalankan backend dengan perintah 
 ```sh
 $ cd project-backend
 $ npm run dev
@@ -23,6 +26,6 @@ Jalankan frontend pada terminal yang berbeda
 $ cd project-frontend
 $ npm start
 ```
-Akan terbuka sebuah tab di browser yang berisi projek yang sudah dijalankan.
+Secara otomatis akan terbuka sebuah tab di browser yang berisi projek yang sudah dijalankan.
 Jika tidak terbuka, silahkan buka di browser dan tuliskan ``` http://localhost:3001/```
 
