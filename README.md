@@ -10,7 +10,19 @@ atau menjalankan perintah :
 $ git clone https://github.com/annisanauli/project-manajuser.git
 ```
 ### Database 
-Import file database ``` manajuser_db.sql``` ke localhost phpMyAdmin
+Sesuaikan konfigurasi database anda pada file config.js yang terdapat pada backend
+```sh 
+const sequelize = new Sequelize(
+  'manajuser_db',
+  'root',
+  '',
+  {
+    host: 'localhost',
+    dialect: 'mysql'
+  }
+);
+```
+Kemudian import file database ``` manajuser_db.sql``` ke localhost phpMyAdmin
 
 ### Backend
 Selanjutnya jalankan backend melalui terminal dengan perintah 
