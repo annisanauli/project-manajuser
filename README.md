@@ -26,8 +26,7 @@ Jalankan frontend pada terminal yang berbeda
 $ cd project-frontend
 $ npm start
 ```
-Frontend akan dijalankan pada ``` http://localhost:3001/```
-Secara otomatis akan terbuka sebuah tab di browser yang berisi projek yang sudah dijalankan.
+Frontend akan dijalankan pada ``` http://localhost:3001/``` dan akan terbuka sebuah tab di browser yang berisi projek yang sudah dijalankan.
 Jika tidak terbuka, silahkan buka di browser dan tuliskan ``` http://localhost:3001/```
 
 ## Teknologi 
