@@ -2,6 +2,7 @@
 
 ## Instalasi
 Untuk instal aplikasi ini, download/clone dengan 
+
 ![screenshoot](https://user-images.githubusercontent.com/43631445/84107020-de2ac900-aa46-11ea-9811-cc16e8b465de.png)
 
 atau menjalankan perintah :
