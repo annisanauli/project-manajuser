@@ -2,7 +2,7 @@
 
 ## Instalasi
 Untuk instal aplikasi ini, download/clone dengan 
-(gambar)
+![DOWNLOAD](http://prntscr.com/swanld)
 
 atau menjalankan perintah :
 ```
