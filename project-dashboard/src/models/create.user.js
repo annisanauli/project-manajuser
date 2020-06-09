@@ -103,7 +103,7 @@ constructor(props){
         password : this.state.fields["campPassword"],
         role  : this.state.selectRole
       }
-      const url = Config.baseUrl+"/user/create"
+      const url = Config.baseUrl+"/users"
       axios.post(url,datapost)
       // alert("Form submitted");
       window.location.href="";
