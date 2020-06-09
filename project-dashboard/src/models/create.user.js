@@ -106,7 +106,7 @@ constructor(props){
       const url = Config.baseUrl+"/user/create"
       axios.post(url,datapost)
       // alert("Form submitted");
-      window.location.href="http:localhost:3001";
+      window.location.href="";
     }else{
       // alert("Form has errors.")
       console.log(this.state)
@@ -138,14 +138,6 @@ constructor(props){
                   <input refs="phone" type="telp" class="form-control" size="12" placeholder="Phone" onChange={this.handleChange.bind(this, "campPhone")} value={this.state.fields["campPhone"]}/>
                   <span class="help-block">{this.state.errors["campPhone"]}</span>
                 </div> 
-
-                {/* <div class="input-group">
-                  <div class="input-group-addon">
-                    <label>+62</label>
-                  </div>
-                  <input type="text" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask/>
-                </div> */}
-
                 <div className="form-group">
                   <label htmlFor="exampleInputEmail1">Email</label>
                   <input refs="email" type="email" class="form-control" size="30" placeholder="Email" onChange={this.handleChange.bind(this, "campEmail")} value={this.state.fields["campEmail"]}/>
