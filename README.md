@@ -13,9 +13,9 @@ $ git clone https://github.com/annisanauli/project-manajuser.git
 Sesuaikan konfigurasi database anda pada file config.js yang terdapat pada backend
 ```sh 
 const sequelize = new Sequelize(
-  'manajuser_db',
-  'root',
-  '',
+  'manajuser_db', //database name
+  'root',         //username
+  '',             //password
   {
     host: 'localhost',
     dialect: 'mysql'
