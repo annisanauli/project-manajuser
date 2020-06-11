@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Config from '../config/config';
 
-// import { FormWithConstraints, FieldFeedbacks, Async, FieldFeedback } from 'react-form-with-constraints';
-
 class form extends Component{
 /**
    * 
@@ -103,10 +101,10 @@ constructor(props){
         password : this.state.fields["campPassword"],
         role  : this.state.selectRole
       }
-      const url = Config.baseUrl+"/user/create"
+      const url = Config.baseUrl+"/users"
       axios.post(url,datapost)
       // alert("Form submitted");
-      window.location.href="http:localhost:3001";
+      window.location.href="";
     }else{
       // alert("Form has errors.")
       console.log(this.state)
