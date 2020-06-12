@@ -12,7 +12,7 @@ git clone https://github.com/annisanauli/project-manajuser.git
 ```
 
 ### Database
-Sesuaikan konfigurasi database anda pada file database.js yang terdapat pada folder config backend
+Sesuaikan konfigurasi database anda pada file ```database.js``` yang terdapat pada folder config backend
 ```sh
 const sequelize = new Sequelize(
   'manajuser_db',
