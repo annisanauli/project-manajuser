@@ -37,13 +37,30 @@ Backend akan berjalan pada ```http://localhost:3000```
 ### Frontend
 Selanjutnya jalankan juga frontend pada terminal yang berbeda dengan perintah
 ```sh
-$ cd project-frontend
+$ cd project-dashboard
+$ npm install react-scripts --save
 $ npm start
 ```
 Frontend akan berjalan pada port lain yaitu ```http://localhost:3001```. 
 Secara otomatis, tab browser akan membuka aplikasinya, namun bila tidak langsung terbuka dapat mengetikkan ```http://localhost:3001``` pada browser.
 
-### Teknologi
+### Testing Frontend
+Untuk melakukan test pada frontend, install JEST dan ENZYME terlebih dahulu
+```sh
+$ npm i -D react-test-renderer
+$ npm i --save-dev enzyme enzyme-adapter-react-16
+```
+Kemudian jalankan perintah berikut untuk test
+```sh
+$ npm run test:update
+$ npm run test
+$ npm run test:coverage
+```
+
+### Testing Backend
+-------------
+
+## Teknologi
 1. Frontend : React JS, AdminLTE
 2. Backend : Node JS, Sequelize
 3. Database : MySQL
