@@ -287,10 +287,10 @@ exports[`App testing project-dasboard 1`] = `
                                 Nama
                               </label>
                               <input
-                                Required={true}
-                                class="form-control"
+                                className="form-control"
                                 onChange={[Function]}
                                 placeholder="Name"
+                                required={true}
                                 size="30"
                                 type="text"
                               />
@@ -304,7 +304,7 @@ exports[`App testing project-dasboard 1`] = `
                                 No. Handphone
                               </label>
                               <input
-                                class="form-control"
+                                className="form-control"
                                 onChange={[Function]}
                                 placeholder="Phone"
                                 refs="phone"
@@ -312,7 +312,7 @@ exports[`App testing project-dasboard 1`] = `
                                 type="telp"
                               />
                               <span
-                                class="help-block"
+                                className="help-block"
                               />
                             </div>
                             <div
@@ -324,7 +324,7 @@ exports[`App testing project-dasboard 1`] = `
                                 Email
                               </label>
                               <input
-                                class="form-control"
+                                className="form-control"
                                 onChange={[Function]}
                                 placeholder="Email"
                                 refs="email"
@@ -332,7 +332,7 @@ exports[`App testing project-dasboard 1`] = `
                                 type="email"
                               />
                               <span
-                                class="help-block"
+                                className="help-block"
                               />
                             </div>
                             <div
@@ -344,7 +344,7 @@ exports[`App testing project-dasboard 1`] = `
                                 Password
                               </label>
                               <input
-                                class="form-control"
+                                className="form-control"
                                 onChange={[Function]}
                                 placeholder="Password"
                                 refs="password"
@@ -352,26 +352,26 @@ exports[`App testing project-dasboard 1`] = `
                                 type="password"
                               />
                               <span
-                                class="help-block"
+                                className="help-block"
                               />
                             </div>
                             <div
-                              class="form-group"
+                              className="form-group"
                             >
                               <label
-                                for="inputState"
+                                htmlFor="inputState"
                               >
                                 User Role
                               </label>
                               <select
-                                class="form-control"
+                                className="form-control"
                                 id="inputState"
                                 onChange={[Function]}
                               >
                                 <option
-                                  selected={true}
+                                  defaultValue={true}
                                 >
-                                  Choose...
+                                  Pilih
                                 </option>
                                 <option
                                   value="1"
@@ -405,7 +405,7 @@ exports[`App testing project-dasboard 1`] = `
                                 Batal
                               </button>
                               <button
-                                class="btn btn-primary"
+                                className="btn btn-primary"
                                 id="submit"
                                 type="submit"
                               >
