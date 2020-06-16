@@ -44,7 +44,6 @@ export default class Header extends Component {
                                     page and may cause design problems
                                 </a>
                                 </li>
-                                
                             </ul>
                             </li>
                             <li className="footer"><a href="fake_url">View all</a></li>
@@ -56,6 +55,7 @@ export default class Header extends Component {
                 </header>
             </div>
 
+            
         )
     }
 }

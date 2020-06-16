@@ -21,10 +21,9 @@ class readUser extends Component {
   componentDidMount(){
      this.loadUser()
      const script = document.createElement("script");
-
         script.src = 'js/content.js';
         script.async = true;
-        
+
         document.body.appendChild(script);
   }
 

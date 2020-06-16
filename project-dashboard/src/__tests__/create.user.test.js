@@ -55,6 +55,5 @@ describe("create.user component", () => {
     //expect(component.find('select').at(0).props().value).toEqual('Role 2');
     expect(component.state().selectRole).toEqual('1');
   });
-
-  })
+})
 

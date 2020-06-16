@@ -12,8 +12,11 @@ export default class App extends Component {
     return (
       <div>
         <Header/>
+
         <Menu/>
+
         <ReadUser/>
+        
         <Footer/>
       </div>
     )

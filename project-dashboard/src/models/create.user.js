@@ -9,9 +9,8 @@ class form extends Component{
    */
 constructor(props){
     super(props);
-
     this.state = {
-      fields: {},
+      fields: {campName:'', campEmail:'', campPhone:'', campPassword:''},
       errors: {}
     }
   }
@@ -109,7 +108,7 @@ constructor(props){
       // alert("Form has errors.")
       console.log(this.state)
     } 
-   
+
 
   }
 
@@ -124,12 +123,10 @@ constructor(props){
       <div>
         <div className="box-body">      	
         <form name="contactform" className="contactform" onSubmit= {this.handleSubmit.bind(this)}>
-          
             <fieldset>
                 <div className="form-group">
                 <label htmlFor="exampleInputName1">Nama</label>
                   <input ref="name" type="text" className="form-control" size="30" placeholder="Name" onChange={this.handleChange.bind(this, "campName")} value={this.state.fields["campName"]} required/>
-                  
                 </div>
                 <div className="form-group">
                   <label htmlFor="exampleInputHandphone1">No. Handphone</label>

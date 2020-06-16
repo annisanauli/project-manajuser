@@ -44,8 +44,8 @@ export default class Menu extends Component {
                 </section>
                 {/* /.sidebar */}
                 </aside>
-
             </div>
+            
         )
     }
 }
