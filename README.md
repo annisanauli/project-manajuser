@@ -52,13 +52,16 @@ $ npm i --save-dev enzyme enzyme-adapter-react-16
 ```
 Kemudian jalankan perintah berikut untuk test
 ```sh
-$ npm run test:update
 $ npm run test
 $ npm run test:coverage
 ```
+Apabila ingin melakukan update snapshot sebelumnya jalankan perintah
+```sh
+$ npm run test:update
+```
 
 ### Testing Backend
----
+- - -
 
 ## Teknologi
 1. Frontend : React JS, AdminLTE
