@@ -127,6 +127,7 @@ constructor(props){
                 <div className="form-group">
                 <label htmlFor="exampleInputName1">Nama</label>
                   <input ref="name" type="text" className="form-control" size="30" placeholder="Name" onChange={this.handleChange.bind(this, "campName")} value={this.state.fields["campName"]} required/>
+                  <span className="help-block">{this.state.errors["campName"]}</span>
                 </div>
                 <div className="form-group">
                   <label htmlFor="exampleInputHandphone1">No. Handphone</label>
