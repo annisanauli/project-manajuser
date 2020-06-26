@@ -4,7 +4,9 @@
   "description": "This project was created with Node JS",
   "main": "App.js",
   "scripts": {
-    "dev": "nodemon src/App.js"
+    "dev": "nodemon src/App.js",
+    "test": "cross-env NODE_ENV=test jest --testTimeout=10000 --forceExit",
+    "test:coverage": "jest --coverage --forceExit"
   },
   "keywords": [
     "npm"
@@ -16,5 +18,15 @@
     "mysql2": "^2.1.0",
     "sequelize": "^5.21.10"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "jest": "^26.1.0",
+    "supertest": "^4.0.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  }
 }
