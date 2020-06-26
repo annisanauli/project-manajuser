@@ -61,7 +61,17 @@ $ npm run test:update
 ```
 
 ### Testing Backend
-- - -
+
+```sh
+npm install --save-dev jest supertest
+npm i -D cross-env
+```
+
+```sh
+npm run test
+npm run test:coverage
+```
+
 
 ## Teknologi
 1. Frontend : React JS, AdminLTE
