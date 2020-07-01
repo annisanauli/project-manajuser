@@ -5,8 +5,8 @@
   "main": "App.js",
   "scripts": {
     "dev": "nodemon src/App.js",
-    "test": "cross-env NODE_ENV=test jest --testTimeout=10000 --forceExit",
-    "test:coverage": "jest --coverage --forceExit"
+    "test": "jest --forceExit --detectOpenHandles",
+    "test:coverage": "jest --coverage --forceExit --detectOpenHandles"
   },
   "keywords": [
     "npm"

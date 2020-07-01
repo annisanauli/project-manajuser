@@ -14,6 +14,7 @@ app.use((req, res, next) => {
   res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
   next();
 });
+
 //Route
 app.use('/',userRouters)
 // app.use('/',(req,res)=>{

@@ -11,15 +11,14 @@ var User = sequelize.define(
         primaryKey: true,
         autoIncrement: true,
     },
-        name: Sequelize.STRING,
-        email: Sequelize.STRING,
-        password: Sequelize.STRING,
+        name: Sequelize.STRING(30),
+        email: Sequelize.STRING(30),
+        password: Sequelize.STRING(20),
         phone: {
-            type : Sequelize.BIGINT,
-            zerofill : true,
+            type : Sequelize.BIGINT(12).ZEROFILL.UNSIGNED,
         },
         roleId: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.INTEGER(11),
         // This is a reference to another model
         references: {
             model: Role,
