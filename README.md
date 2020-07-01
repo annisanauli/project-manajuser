@@ -35,10 +35,17 @@ $ npm run dev
 Backend akan berjalan pada ```http://localhost:3000```
 
 ### Frontend
-Selanjutnya jalankan juga frontend pada terminal yang berbeda dengan perintah
+Selanjutnya jalankan perintah berikut pada pada terminal frontend
 ```sh
 $ cd project-dashboard
 $ npm install react-scripts --save
+//instalarsweetalert
+npm install --save sweetalert2
+// instalar sccs
+npm install node-sass
+```
+Jalankan frontend dengan perintah
+```sh
 $ npm start
 ```
 Frontend akan berjalan pada port lain yaitu ```http://localhost:3001```. 
