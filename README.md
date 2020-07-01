@@ -39,10 +39,11 @@ Selanjutnya jalankan perintah berikut pada pada terminal frontend
 ```sh
 $ cd project-dashboard
 $ npm install react-scripts --save
-//instalarsweetalert
-npm install --save sweetalert2
+ 
+//instalar sweetalert
+$ npm install --save sweetalert2
 // instalar sccs
-npm install node-sass
+$ npm install node-sass
 ```
 Jalankan frontend dengan perintah
 ```sh
@@ -68,7 +69,7 @@ $ npm run test:update
 ```
 
 ### Testing Backend
-
+Install tools yang akan digunakan untuk testing pada backend 
 ```sh
 npm install --save-dev jest supertest
 npm i -D cross-env
