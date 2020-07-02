@@ -69,12 +69,12 @@ $ npm run test:update
 ```
 
 ### Testing Backend
-Install tools yang akan digunakan untuk testing pada backend 
+Install tools yang akan digunakan untuk testing pada backend :
 ```sh
 npm install --save-dev jest supertest
 npm i -D cross-env
 ```
-
+Untuk menjalankan testing gunakan perintah :
 ```sh
 npm run test
 npm run test:coverage
