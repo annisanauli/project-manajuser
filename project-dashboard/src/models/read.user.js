@@ -1,7 +1,10 @@
 import React, {Component} from 'react'
 import axios from 'axios';
 import CreateUser from './create.user';
+// import EditUser from './edit.user';
 import Config from '../config/config';
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+import 'sweetalert2/src/sweetalert2.scss'
 
 class readUser extends Component {
   /**
@@ -21,10 +24,9 @@ class readUser extends Component {
   componentDidMount(){
      this.loadUser()
      const script = document.createElement("script");
-
         script.src = 'js/content.js';
         script.async = true;
-        
+
         document.body.appendChild(script);
   }
 
@@ -33,7 +35,7 @@ class readUser extends Component {
    */
   loadUser(){
     const url = Config.baseUrl+"/users"
-    axios.get(url)
+    return axios.get(url)
     .then(res=>{
       if (res.data.success) {
         const data = res.data.data
@@ -62,33 +64,21 @@ class readUser extends Component {
                   {/* /.box */}
                   <div className="box">
                     <div className="box-header">
-                      <section class="content-header">
+                      <section className="content-header">
                         <h3 className="box-title">Daftar User</h3>
-                        <ol class="breadcrumb">
+                        <ol className="breadcrumb">
                           <button type="button" className="btn btn-warning" data-toggle="modal" data-target="#modal-default">
                           Create User
+                          
                           </button>
                         </ol>
                       </section>        
                     </div>
                       <br></br>
-                    <div className="modal fade" id="modal-default">
-                      <div className="modal-dialog">
-                      <div className="modal-content">
-                      <div className="modal-header">
-                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">×</span></button>
-                          <h4 className="modal-title">Buat User Baru</h4>
-                      </div>
 
                       <CreateUser/>
+                      {/* <EditUser/> */}
 
-                      </div>
-                      {/* /.modal-content */}
-                      </div>
-                      {/* /.modal-dialog */}
-                      </div>
-                      {/* /.box-header */}
                       <div className="box-body">
                         <table id="example1" className="table table-bordered table-striped">
                           <thead>
@@ -97,15 +87,11 @@ class readUser extends Component {
                               <th scope="col">Email</th>
                               <th scope="col">No. Handphone</th>
                               <th scope="col">Role</th>
+                              <th scope="col">Options</th>
                             </tr>
                           </thead>
                           <tbody>
-                            <tr>
-                              <td>Amanda manopo</td>
-                              <td>amandamanda@gmail.com</td>
-                              <td>08572349423</td>
-                              <td>Role 3</td>
-                            </tr>
+                            
                             {this.loadFillData()}
                           </tbody>
                         </table>
@@ -129,14 +115,78 @@ class readUser extends Component {
       return this.state.listUser.map((data)=>{
         return(
           <tr>
+            {/* <td>{data.id}</td> */}
             <td>{data.name}</td>
             <td>{data.email}</td>
             <td>{data.phone}</td>
             <td>{data.role.role}</td>
+            <td>
+              <div className="input-group-btn">
+              <button type="button" className="btn btn-default btn-block" data-toggle="dropdown">...</button>
+                <ul className="dropdown-menu">
+                  <li>
+                    <a data-toggle="modal" data-target="#modal-default2">
+                      <i className="fa fa-pencil"/> <span>Edit</span>
+                    </a>                
+                  </li>
+                  
+                  <li className="divider"></li>
+                  <li>
+                    <a onClick={()=>this.onDelete(data.id)}>
+                      <i className="fa fa-trash" /> <span>Delete</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </td>
           </tr>
         )
       })
     }
+
+    onDelete(id){
+      Swal.fire({
+        title: 'Are you sure?',
+        text: 'You will not be able to recover this data!',
+        // type: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, delete it!',
+        cancelButtonText: 'No, keep it'
+      }).then((response) => {
+        if (response.value) {
+          this.sendDelete(id)
+        } else if (response.dismiss === Swal.DismissReason.cancel) {
+          Swal.fire(
+            'Cancelled',
+            'Your data is safe :)',
+            'error'
+          )
+        }
+      })
+    }
+
+    sendDelete(userId)
+  {
+    // url backend
+    const url = Config.baseUrl+"/users/"+userId    // parameter data post
+    // network
+    axios.delete(url,{id:userId})
+    .then(response =>{
+      console.log(response)
+      if (response.data.success) {
+        Swal.fire(
+          'Deleted!',
+          'Your data has been deleted.',
+          'success'
+        )
+        this.loadUser()
+      }
+    })
+    .catch ( error => {
+      alert("Error 325 ")
+    })
+  }
+ 
 
 }
 export default readUser;

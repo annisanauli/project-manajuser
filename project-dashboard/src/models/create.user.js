@@ -9,9 +9,8 @@ class form extends Component{
    */
 constructor(props){
     super(props);
-
     this.state = {
-      fields: {},
+      fields: {campName:'', campEmail:'', campPhone:'', campPassword:''},
       errors: {}
     }
   }
@@ -77,7 +76,7 @@ constructor(props){
     }
 
     if(typeof fields["campPhone"] !== "undefined"){
-      if(!fields["campPhone"].match(/^(0814|0815|0816|0855|0858|0856|0857|0827|0828|0811|0812|0821|0822|0851|0852|0853|0823|0817|0818|0819|0877|0878|0859|0831|0832|0833|0838|0881|0882|0883|0884|0885|0886|0887|0888|0889|0895|0896|0897|0898|0899)[0-9]{6,8}$/gm)){
+      if(!fields["campPhone"].match(/^(0813|0814|0815|0816|0855|0858|0856|0857|0827|0828|0811|0812|0821|0822|0851|0852|0853|0823|0817|0818|0819|0877|0878|0859|0831|0832|0833|0838|0881|0882|0883|0884|0885|0886|0887|0888|0889|0895|0896|0897|0898|0899)[0-9]{6,8}$/gm)){
         formIsValid = false;
         errors["campPhone"] = "Phone number is not valid";
       }      	
@@ -109,7 +108,7 @@ constructor(props){
       // alert("Form has errors.")
       console.log(this.state)
     } 
-   
+
 
   }
 
@@ -121,43 +120,42 @@ constructor(props){
 
   render(){
     return (
+      <div className="modal fade" id="modal-default">
+        <div className="modal-dialog">
+        <div className="modal-content">
+        <div className="modal-header">
+          <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span></button>
+          <h4 className="modal-title">Buat User Baru</h4>
+        </div>
       <div>
         <div className="box-body">      	
         <form name="contactform" className="contactform" onSubmit= {this.handleSubmit.bind(this)}>
-          
             <fieldset>
                 <div className="form-group">
                 <label htmlFor="exampleInputName1">Nama</label>
-                  <input ref="name" type="text" class="form-control" size="30" placeholder="Name" onChange={this.handleChange.bind(this, "campName")} value={this.state.fields["campName"]} Required/>
-                  
+                  <input refs="name" type="text" className="form-control" size="30" placeholder="Name" onChange={this.handleChange.bind(this, "campName")} value={this.state.fields["campName"]} required/>
+                  <span className="help-block">{this.state.errors["campName"]}</span>
                 </div>
                 <div className="form-group">
                   <label htmlFor="exampleInputHandphone1">No. Handphone</label>
-                  <input refs="phone" type="telp" class="form-control" size="12" placeholder="Phone" onChange={this.handleChange.bind(this, "campPhone")} value={this.state.fields["campPhone"]}/>
-                  <span class="help-block">{this.state.errors["campPhone"]}</span>
+                  <input refs="phone" type="telp" className="form-control" size="12" placeholder="Phone" onChange={this.handleChange.bind(this, "campPhone")} value={this.state.fields["campPhone"]}/>
+                  <span className="help-block">{this.state.errors["campPhone"]}</span>
                 </div> 
-
-                {/* <div class="input-group">
-                  <div class="input-group-addon">
-                    <label>+62</label>
-                  </div>
-                  <input type="text" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask/>
-                </div> */}
-
                 <div className="form-group">
                   <label htmlFor="exampleInputEmail1">Email</label>
-                  <input refs="email" type="email" class="form-control" size="30" placeholder="Email" onChange={this.handleChange.bind(this, "campEmail")} value={this.state.fields["campEmail"]}/>
-                  <span class="help-block">{this.state.errors["campEmail"]}</span>
+                  <input refs="email" type="email" className="form-control" size="30" placeholder="Email" onChange={this.handleChange.bind(this, "campEmail")} value={this.state.fields["campEmail"]}/>
+                  <span className="help-block">{this.state.errors["campEmail"]}</span>
                 </div>
                 <div className="form-group">
                   <label htmlFor="exampleInputPassword1">Password</label>
-                  <input refs="password" type="password" class="form-control" size="15" placeholder="Password" onChange={this.handleChange.bind(this, "campPassword")} value={this.state.fields["campPassword"]}/>
-                  <span class="help-block">{this.state.errors["campPassword"]}</span>
+                  <input refs="password" type="password" className="form-control" size="15" placeholder="Password" onChange={this.handleChange.bind(this, "campPassword")} value={this.state.fields["campPassword"]}/>
+                  <span className="help-block">{this.state.errors["campPassword"]}</span>
                 </div>
-                <div class="form-group">
-                        <label for="inputState">User Role</label>
-                        <select id="inputState" class="form-control" onChange={(value)=> this.setState({selectRole:value.target.value})}>
-                            <option selected>Choose...</option>
+                <div className="form-group">
+                        <label htmlFor="inputState">User Role</label>
+                        <select id="inputState" className="form-control" onChange={(value)=> this.setState({selectRole:value.target.value})}>
+                            <option defaultValue>Pilih</option>
                             <option value="1">Role 1</option>
                             <option value="2">Role 2</option>
                             <option value="3">Role 3</option>
@@ -169,12 +167,15 @@ constructor(props){
           <div className="col-md-12">
             <div className="modal-footer">
                         <button type="button" className="btn btn-default" data-dismiss="modal">Batal</button>
-                        <button type="submit" id="submit" class="btn btn-primary" >Simpan</button>
+                        <button type="submit" id="submit" className="btn btn-primary" >Simpan</button>
                     </div>
           </div>
 
         </form>
         </div>  
+      </div>
+      </div>
+      </div>
       </div>
     )
   }
