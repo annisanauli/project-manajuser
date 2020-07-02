@@ -78,7 +78,7 @@ class readUser extends Component {
 
                       <CreateUser/>
                       {/* <EditUser/> */}
-
+                    
                       <div className="box-body">
                         <table id="example1" className="table table-bordered table-striped">
                           <thead>
@@ -114,8 +114,7 @@ class readUser extends Component {
     loadFillData(){
       return this.state.listUser.map((data)=>{
         return(
-          <tr>
-            {/* <td>{data.id}</td> */}
+          <tr key={data.id}>
             <td>{data.name}</td>
             <td>{data.email}</td>
             <td>{data.phone}</td>
@@ -133,6 +132,7 @@ class readUser extends Component {
                   <li className="divider"></li>
                   <li>
                     <a onClick={()=>this.onDelete(data.id)}>
+                      {/* <a data-toggle="modal" data-target="#modal-default3"> */}
                       <i className="fa fa-trash" /> <span>Delete</span>
                     </a>
                   </li>
@@ -150,8 +150,8 @@ class readUser extends Component {
         text: 'You will not be able to recover this data!',
         // type: 'warning',
         showCancelButton: true,
-        confirmButtonText: 'Yes, delete it!',
-        cancelButtonText: 'No, keep it'
+        confirmButtonText: 'Delete',
+        cancelButtonText: 'Cancel'
       }).then((response) => {
         if (response.value) {
           this.sendDelete(id)
