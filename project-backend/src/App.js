@@ -22,4 +22,6 @@ app.use('/',(req,res)=>{
 
 app.listen(app.get('port'),()=>{
   console.log("Start server on port "+app.get('port'))
-})
+});
+
+module.exports = app;

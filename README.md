@@ -35,31 +35,54 @@ $ npm run dev
 Backend akan berjalan pada ```http://localhost:3000```
 
 ### Frontend
-Selanjutnya jalankan juga frontend pada terminal yang berbeda dengan perintah
+Selanjutnya jalankan perintah berikut pada pada terminal frontend
 ```sh
-$ cd project-frontend
+$ cd project-dashboard
+$ npm install react-scripts --save
+ 
+//instalar sweetalert
+$ npm install --save sweetalert2
+// instalar sccs
+$ npm install node-sass
+```
+Jalankan frontend dengan perintah
+```sh
 $ npm start
 ```
 Frontend akan berjalan pada port lain yaitu ```http://localhost:3001```. 
 Secara otomatis, tab browser akan membuka aplikasinya, namun bila tidak langsung terbuka dapat mengetikkan ```http://localhost:3001``` pada browser.
 
-### Testing
-Untuk melakukan testing pada frontend, jalankan perintah dibawah untuk instalasi Jest dan Enzyme
+### Testing Frontend
+Untuk melakukan test pada frontend, install JEST dan ENZYME terlebih dahulu
 ```sh
-$ npm i -D react-test-renderer                  //Jest
-$ npm i -D enzyme enzyme-adapter-react-16       //Enzyme
+$ npm i -D react-test-renderer
+$ npm i --save-dev enzyme enzyme-adapter-react-16
 ```
-Mulai lakukan test dengan jalankan perintah 
+Kemudian jalankan perintah berikut untuk test
+```sh
+$ npm run test
+$ npm run test:coverage
+```
+Apabila ingin melakukan update snapshot sebelumnya jalankan perintah
+```sh
+$ npm run test:update
+```
+
+### Testing Backend
+Install tools yang akan digunakan untuk testing pada backend :
+```sh
+npm install --save-dev jest supertest
+npm i -D cross-env
+```
+Untuk menjalankan testing gunakan perintah :
 ```sh
 npm run test
 npm run test:coverage
-``` 
+```
 
-### Teknologi
+
+## Teknologi
 1. Frontend : React JS, AdminLTE
 2. Backend : Node JS, Sequelize
 3. Database : MySQL
 4. REST API : Express, Axios
-
-
-

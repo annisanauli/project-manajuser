@@ -2,9 +2,11 @@
   "name": "project-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "App.js",
   "scripts": {
-    "dev": "nodemon src/app.js"
+    "dev": "nodemon src/App.js",
+    "test": "jest --forceExit --detectOpenHandles",
+    "test:coverage": "jest --coverage --forceExit --detectOpenHandles"
   },
   "keywords": [],
   "author": "",
@@ -13,5 +15,16 @@
     "express": "^4.17.1",
     "mysql2": "^2.1.0",
     "sequelize": "^5.21.10"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "jest": "^26.1.0",
+    "supertest": "^4.0.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
   }
 }
