@@ -29,7 +29,7 @@ class readUser extends Component {
 
         document.body.appendChild(script);
   }
-
+  
   /**
    * @description method untuk memanggil dan memanipulasi data dari database ke server
    */
@@ -83,6 +83,7 @@ class readUser extends Component {
                         <table id="example1" className="table table-bordered table-striped">
                           <thead>
                             <tr>
+                              {/* <th scope="col">ID</th> */}
                               <th scope="col">Nama</th>
                               <th scope="col">Email</th>
                               <th scope="col">No. Handphone</th>
@@ -165,7 +166,7 @@ class readUser extends Component {
       })
     }
 
-    sendDelete(userId)
+  sendDelete(userId)
   {
     // url backend
     const url = Config.baseUrl+"/users/"+userId    // parameter data post
