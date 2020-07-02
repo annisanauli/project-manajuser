@@ -35,7 +35,7 @@ class readUser extends Component {
    */
   loadUser(){
     const url = Config.baseUrl+"/users"
-    axios.get(url)
+    return axios.get(url)
     .then(res=>{
       if (res.data.success) {
         const data = res.data.data
