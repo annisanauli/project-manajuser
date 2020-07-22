@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
 import axios from 'axios';
 import CreateUser from './create.user';
-// import EditUser from './edit.user';
+import EditUser from './edit.user';
 import Config from '../config/config';
-import Swal from 'sweetalert2/dist/sweetalert2.js'
-import 'sweetalert2/src/sweetalert2.scss'
+import Swal from 'sweetalert2/dist/sweetalert2.js';
+import 'sweetalert2/src/sweetalert2.scss';
 
 class readUser extends Component {
   /**
@@ -15,19 +15,25 @@ class readUser extends Component {
     super(props);
     this.state = {
       listUser:[]
+      // activeId:'305'
     }
+    // console.log(this.state.activeId);
+    // this.onEdit=this.onEdit.bind(this);
+    this.child = React.createRef();
+    
+    
   }
 
   /**
    * @description method untuk memanggil dan memanipulasi data agar data dapat ditampil sesuai dengan paging short, limit entry
    */
   componentDidMount(){
-     this.loadUser()
-     const script = document.createElement("script");
-        script.src = 'js/content.js';
-        script.async = true;
+    this.loadUser()
+    const script = document.createElement("script");
+      script.src = 'js/content.js';
+      script.async = true;
 
-        document.body.appendChild(script);
+      document.body.appendChild(script);
   }
 
   /**
@@ -69,35 +75,33 @@ class readUser extends Component {
                         <ol className="breadcrumb">
                           <button type="button" className="btn btn-warning" data-toggle="modal" data-target="#modal-default">
                           Create User
-                          
                           </button>
                         </ol>
                       </section>        
                     </div>
-                      <br></br>
-
-                      <CreateUser/>
-                      {/* <EditUser/> */}
+                    <br></br>
+                    <CreateUser/>
+                    {/* <EditUser activeId={this.state.activeId}/> */}
+                    <EditUser ref={this.child}/>
                     
-                      <div className="box-body">
-                        <table id="example1" className="table table-bordered table-striped">
-                          <thead>
-                            <tr>
-                              <th scope="col">Nama</th>
-                              <th scope="col">Email</th>
-                              <th scope="col">No. Handphone</th>
-                              <th scope="col">Role</th>
-                              <th scope="col">Options</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            
-                            {this.loadFillData()}
-                          </tbody>
-                        </table>
-                      </div>
-                    {/* /.box-body */}
+                    <div className="box-body">
+                      <table id="example1" className="table table-bordered table-striped">
+                        <thead>
+                          <tr>
+                            <th scope="col">Nama</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">No. Handphone</th>
+                            <th scope="col">Role</th>
+                            <th scope="col">Options</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {this.loadFillData()}
+                        </tbody>
+                      </table>
                     </div>
+                    {/* /.box-body */}
+                   </div>
                 {/* /.box */}
                 </div>
               {/* /.col */}
@@ -124,7 +128,7 @@ class readUser extends Component {
               <button type="button" className="btn btn-default btn-block" data-toggle="dropdown">...</button>
                 <ul className="dropdown-menu">
                   <li>
-                    <a data-toggle="modal" data-target="#modal-default2">
+                  <a data-toggle="modal" data-target="#modal-default2" onClick={()=>this.onEdit(data.id)}>
                       <i className="fa fa-pencil"/> <span>Edit</span>
                     </a>                
                   </li>
@@ -143,29 +147,39 @@ class readUser extends Component {
         )
       })
     }
+    onEdit(id){ 
+      // this.setState({
+      //   activeId:id
+      // })
+      // console.log(this.state.activeId);
+      // console.log(id);
+      this.child.current.getData(id);
+    }  
 
     onDelete(id){
       Swal.fire({
-        title: 'Are you sure?',
-        text: 'You will not be able to recover this data!',
+        title: 'Delete User',
+        text: 'Are you sure want to delete this data?',
         // type: 'warning',
+        showCloseButton: true,
         showCancelButton: true,
+        confirmButtonColor: '#d33',
         confirmButtonText: 'Delete',
         cancelButtonText: 'Cancel'
       }).then((response) => {
         if (response.value) {
           this.sendDelete(id)
         } else if (response.dismiss === Swal.DismissReason.cancel) {
+          // window.location.href="";
           Swal.fire(
             'Cancelled',
             'Your data is safe :)',
-            'error'
-          )
+            'error')
         }
       })
     }
 
-    sendDelete(userId)
+  sendDelete(userId)
   {
     // url backend
     const url = Config.baseUrl+"/users/"+userId    // parameter data post
@@ -175,7 +189,7 @@ class readUser extends Component {
       console.log(response)
       if (response.data.success) {
         Swal.fire(
-          'Deleted!',
+          'Successfull',
           'Your data has been deleted.',
           'success'
         )
@@ -187,6 +201,7 @@ class readUser extends Component {
     })
   }
  
+
 
 }
 export default readUser;
