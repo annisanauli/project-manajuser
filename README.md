@@ -45,6 +45,13 @@ $ npm install --save sweetalert2
 // instalar sccs
 $ npm install node-sass
 ```
+
+//instal jsdoc
+```sh
+$ npm i --save-dev jsdoc better-docs
+$ npm run docs
+```
+
 Jalankan frontend dengan perintah
 ```sh
 $ npm start
