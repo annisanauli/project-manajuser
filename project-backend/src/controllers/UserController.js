@@ -9,7 +9,7 @@ sequelize.sync()
   controllers.create = async (req,res) => {
     try{
       const {name, email, password, phone, role } = req.body;
-      console.log("Role es ==>"+role)
+      console.log("Role es -->"+role)
       const data = await User.create({
         name:name,
         email:email,
@@ -33,7 +33,7 @@ sequelize.sync()
     });
     res.status(200).json({success:true,data:data, message:"Get all data is success"})
     } catch (error) {
-      return res.status(404).json ({message: "Users not found"})
+      return res.status(404).json({error: error.message})
     }
   };
   
@@ -98,6 +98,5 @@ sequelize.sync()
       return res.status(500).json ({error: error.message});
     }
   };
-
    
   module.exports = controllers;
