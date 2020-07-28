@@ -46,7 +46,10 @@ $ npm install --save sweetalert2
 $ npm install node-sass
 ```
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> test
 
 //instal jsdoc
 ```sh
@@ -54,6 +57,9 @@ $ npm i --save-dev jsdoc better-docs
 $ npm run docs
 ```
 
+<<<<<<< HEAD
+>>>>>>> test
+=======
 >>>>>>> test
 Jalankan frontend dengan perintah
 ```sh
@@ -69,6 +75,7 @@ $ npm i -D react-test-renderer
 $ npm i --save-dev enzyme enzyme-adapter-react-16
 ```
 Kemudian jalankan perintah berikut untuk test
+<<<<<<< HEAD
 ```sh
 $ npm run test
 $ npm run test:coverage
@@ -84,14 +91,36 @@ Install tools yang akan digunakan untuk testing pada backend :
 npm install --save-dev jest supertest
 npm i -D cross-env
 ```
+=======
+```sh
+$ npm run test
+$ npm run test:coverage
+```
+Apabila ingin melakukan update snapshot sebelumnya jalankan perintah
+```sh
+$ npm run test:update
+```
+
+### Testing Backend
+Install tools yang akan digunakan untuk testing pada backend :
+```sh
+npm install --save-dev jest supertest
+npm i -D cross-env
+```
+>>>>>>> test
 Untuk menjalankan testing gunakan perintah :
 ```sh
 npm run test
 npm run test:coverage
 ```
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> test
 =======
 
 
@@ -101,9 +130,13 @@ npm run test:coverage
 2. Backend : Node JS, Sequelize
 3. Database : MySQL
 <<<<<<< HEAD
+<<<<<<< HEAD
 4. REST API : Express, Axios
 
 
+=======
+4. REST API : Express, Axios
+>>>>>>> test
 =======
 4. REST API : Express, Axios
 >>>>>>> test

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 const app = require('../App');
 const request = require('supertest');
 
@@ -47,6 +48,8 @@ describe('Test Endpoints', () => {
     const id = 67;
     const res = await request(app).get('/users${id}');
 =======
+=======
+>>>>>>> test
 const app = require('../index');
 const request = require('supertest');
 const db = require('../config/database')
@@ -132,11 +135,15 @@ describe('DELETE /users/:id', () => {
   });
   test('should response with status code 404 if user not found', async done => {
     const res = await request(app).delete('/users/20');
+<<<<<<< HEAD
+>>>>>>> test
+=======
 >>>>>>> test
     expect(res.statusCode).toEqual(404);
     done();
   });
 
+<<<<<<< HEAD
 <<<<<<< HEAD
  
 
@@ -147,6 +154,8 @@ describe('DELETE /users/:id', () => {
   // });
 
  
+=======
+>>>>>>> test
 =======
 >>>>>>> test
 });

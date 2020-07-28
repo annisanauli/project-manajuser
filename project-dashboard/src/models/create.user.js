@@ -123,6 +123,7 @@ constructor(props){
       <div className="modal fade" id="modal-default">
         <div className="modal-dialog">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <div className="modal-content">
         <div className="modal-header">
           <button type="button" className="close" data-dismiss="modal" aria-label="Close">
@@ -185,6 +186,23 @@ constructor(props){
                       <input refs="name" type="text" className="form-control" size="30" placeholder="Name" onChange={this.handleChange.bind(this, "campName")} value={this.state.fields["campName"]} required/>
                       <span className="help-block">{this.state.errors["campName"]}</span>
                     </div>
+=======
+          <div className="modal-content">
+          <div className="modal-header">
+            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span></button>
+            <h4 className="modal-title">Buat User Baru</h4>
+          </div>
+          <div>
+            <div className="box-body">      	
+            <form name="userform" className="userform" onSubmit= {this.handleSubmit.bind(this)}>
+                <fieldset>
+                    <div className="form-group">
+                    <label htmlFor="exampleInputName1">Nama</label>
+                      <input refs="name" type="text" className="form-control" size="30" placeholder="Name" onChange={this.handleChange.bind(this, "campName")} value={this.state.fields["campName"]} required/>
+                      <span className="help-block">{this.state.errors["campName"]}</span>
+                    </div>
+>>>>>>> test
                     <div className="form-group">
                       <label htmlFor="exampleInputHandphone1">No. Handphone</label>
                       <input refs="phone" type="telp" className="form-control" size="12" placeholder="Phone" onChange={this.handleChange.bind(this, "campPhone")} value={this.state.fields["campPhone"]}/>
@@ -194,6 +212,7 @@ constructor(props){
                       <label htmlFor="exampleInputEmail1">Email</label>
                       <input refs="email" type="email" className="form-control" size="30" placeholder="Email" onChange={this.handleChange.bind(this, "campEmail")} value={this.state.fields["campEmail"]}/>
                       <span className="help-block">{this.state.errors["campEmail"]}</span>
+<<<<<<< HEAD
 >>>>>>> test
                     </div>
                     <div className="form-group">
@@ -202,6 +221,15 @@ constructor(props){
                       <span className="help-block">{this.state.errors["campPassword"]}</span>
                     </div>
                     <div className="form-group">
+=======
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="exampleInputPassword1">Password</label>
+                      <input refs="password" type="password" className="form-control" size="15" placeholder="Password" onChange={this.handleChange.bind(this, "campPassword")} value={this.state.fields["campPassword"]}/>
+                      <span className="help-block">{this.state.errors["campPassword"]}</span>
+                    </div>
+                    <div className="form-group">
+>>>>>>> test
                       <label htmlFor="inputState">User Role</label>
                         <select id="inputState" className="form-control" onChange={(value)=> this.setState({selectRole:value.target.value})}>
                           <option defaultValue>Pilih</option>
@@ -222,9 +250,12 @@ constructor(props){
           </div>
           </div>
         </div>
+<<<<<<< HEAD
       </div>
       </div>
       </div>
+=======
+>>>>>>> test
       </div>
     )
   }

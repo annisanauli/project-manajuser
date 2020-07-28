@@ -14,8 +14,12 @@ it('renders without crashing', () => {
   expect(ReactDOM.render).toHaveBeenCalledWith(<App />, div)
   expect(ReactDOM).toMatchSnapshot();
 <<<<<<< HEAD
+<<<<<<< HEAD
 });
 
+=======
+});
+>>>>>>> test
 =======
 });
 >>>>>>> test

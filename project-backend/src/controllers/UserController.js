@@ -8,6 +8,7 @@ sequelize.sync()
   //CREATE NEW USER
   controllers.create = async (req,res) => {
 <<<<<<< HEAD
+<<<<<<< HEAD
     // data parameters from post
     const {name, email, password, phone, role } = req.body;
     console.log("Role es ==>"+role)
@@ -77,6 +78,8 @@ sequelize.sync()
     res.status(200).json({success:true,deleted:del,message:"Deleted successful"});
   }
 =======
+=======
+>>>>>>> test
     try{
       const {name, email, password, phone, role } = req.body;
       console.log("Role es -->"+role)
@@ -106,6 +109,9 @@ sequelize.sync()
       return res.status(404).json({error: error.message})
     }
   };
+<<<<<<< HEAD
+>>>>>>> test
+=======
 >>>>>>> test
   
   //GET USER USING ID --> EDIT

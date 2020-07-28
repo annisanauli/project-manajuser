@@ -1,6 +1,7 @@
 const app = require('./index');
 app.set('port', process.env.PORT || 3000);
 <<<<<<< HEAD
+<<<<<<< HEAD
 //Middlewares
 app.use(express.json());
 // Configure headers and cors
@@ -24,9 +25,14 @@ app.listen(app.get('port'),()=>{
 
 module.exports = app;
 =======
+=======
+>>>>>>> test
 
 app.listen(app.get('port'),()=>{
   console.log("Start server on port "+app.get('port'))
 });
 
+<<<<<<< HEAD
+>>>>>>> test
+=======
 >>>>>>> test

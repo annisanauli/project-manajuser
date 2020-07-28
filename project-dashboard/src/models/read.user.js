@@ -2,10 +2,17 @@ import React, {Component} from 'react'
 import axios from 'axios';
 import CreateUser from './create.user';
 <<<<<<< HEAD
+<<<<<<< HEAD
 // import EditUser from './edit.user';
 import Config from '../config/config';
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import 'sweetalert2/src/sweetalert2.scss'
+=======
+import EditUser from './edit.user';
+import Config from '../config/config';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
+import 'sweetalert2/src/sweetalert2.scss';
+>>>>>>> test
 =======
 import EditUser from './edit.user';
 import Config from '../config/config';
@@ -36,6 +43,7 @@ class readUser extends Component {
    */
   componentDidMount(){
 <<<<<<< HEAD
+<<<<<<< HEAD
      this.loadUser()
      const script = document.createElement("script");
         script.src = 'js/content.js';
@@ -43,10 +51,18 @@ class readUser extends Component {
 
         document.body.appendChild(script);
 =======
+=======
+>>>>>>> test
     this.loadUser()
     const script = document.createElement("script");
       script.src = 'js/content.js';
       script.async = true;
+<<<<<<< HEAD
+=======
+
+      document.body.appendChild(script);
+  }
+>>>>>>> test
 
       document.body.appendChild(script);
 >>>>>>> test
@@ -97,6 +113,7 @@ class readUser extends Component {
                       </section>        
                     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
                       <br></br>
 
                       <CreateUser/>
@@ -122,6 +139,8 @@ class readUser extends Component {
                       </div>
                     {/* /.box-body */}
 =======
+=======
+>>>>>>> test
                     <br></br>
                     <CreateUser/>
                     {/* <EditUser activeId={this.state.activeId}/> */}
@@ -142,6 +161,9 @@ class readUser extends Component {
                           {this.loadFillData()}
                         </tbody>
                       </table>
+<<<<<<< HEAD
+>>>>>>> test
+=======
 >>>>>>> test
                     </div>
                     {/* /.box-body */}
@@ -163,8 +185,12 @@ class readUser extends Component {
       return this.state.listUser.map((data)=>{
         return(
 <<<<<<< HEAD
+<<<<<<< HEAD
           <tr>
             {/* <td>{data.id}</td> */}
+=======
+          <tr key={data.id}>
+>>>>>>> test
 =======
           <tr key={data.id}>
 >>>>>>> test
@@ -178,7 +204,11 @@ class readUser extends Component {
                 <ul className="dropdown-menu">
                   <li>
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <a data-toggle="modal" data-target="#modal-default2">
+=======
+                  <a data-toggle="modal" data-target="#modal-default2" onClick={()=>this.onEdit(data.id)}>
+>>>>>>> test
 =======
                   <a data-toggle="modal" data-target="#modal-default2" onClick={()=>this.onEdit(data.id)}>
 >>>>>>> test
@@ -190,6 +220,10 @@ class readUser extends Component {
                   <li>
                     <a onClick={()=>this.onDelete(data.id)}>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+                      {/* <a data-toggle="modal" data-target="#modal-default3"> */}
+>>>>>>> test
 =======
                       {/* <a data-toggle="modal" data-target="#modal-default3"> */}
 >>>>>>> test
@@ -258,6 +292,7 @@ class readUser extends Component {
   }
  
 
+<<<<<<< HEAD
 
     onDelete(id){
       Swal.fire({
@@ -302,6 +337,8 @@ class readUser extends Component {
     })
   }
  
+=======
+>>>>>>> test
 
 }
 export default readUser;
