@@ -1,7 +1,11 @@
 {
   "name": "project-backend",
   "version": "1.0.0",
+<<<<<<< HEAD
   "description": "This project was created with Node JS",
+=======
+  "description": "",
+>>>>>>> test
   "main": "App.js",
   "scripts": {
     "dev": "nodemon src/App.js",
@@ -14,6 +18,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "assert": "^2.0.0",
     "express": "^4.17.1",
     "mysql2": "^2.1.0",
     "sequelize": "^5.21.10"
@@ -21,6 +26,11 @@
   "devDependencies": {
     "cross-env": "^7.0.2",
     "jest": "^26.1.0",
+<<<<<<< HEAD
+=======
+    "mocha": "^8.0.1",
+    "nock": "^13.0.2",
+>>>>>>> test
     "supertest": "^4.0.2"
   },
   "jest": {

@@ -13,5 +13,9 @@ it('renders without crashing', () => {
   global.document.getElementById = (id) => id ==='root' && div
   expect(ReactDOM.render).toHaveBeenCalledWith(<App />, div)
   expect(ReactDOM).toMatchSnapshot();
+<<<<<<< HEAD
 });
 
+=======
+});
+>>>>>>> test

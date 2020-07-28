@@ -45,6 +45,16 @@ $ npm install --save sweetalert2
 // instalar sccs
 $ npm install node-sass
 ```
+<<<<<<< HEAD
+=======
+
+//instal jsdoc
+```sh
+$ npm i --save-dev jsdoc better-docs
+$ npm run docs
+```
+
+>>>>>>> test
 Jalankan frontend dengan perintah
 ```sh
 $ npm start
@@ -79,12 +89,21 @@ Untuk menjalankan testing gunakan perintah :
 npm run test
 npm run test:coverage
 ```
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> test
 ## Teknologi
 1. Frontend : React JS, AdminLTE
 2. Backend : Node JS, Sequelize
 3. Database : MySQL
+<<<<<<< HEAD
 4. REST API : Express, Axios
 
 
+=======
+4. REST API : Express, Axios
+>>>>>>> test
