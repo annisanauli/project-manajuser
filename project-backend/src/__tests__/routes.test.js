@@ -41,7 +41,7 @@ describe('GET /users', () => {
 
 describe('GET /users/:id', () => {
   test('Should get user by id', async done => {
-    const res = await request(app).get('/users/1');
+    const res = await request(app).get('/users/2');
     expect(res.statusCode).toEqual(200);
     expect(res.body.message).toBe('Success to get user by id');
     // expect(res.body).toHaveProperty('data');
@@ -87,4 +87,4 @@ describe('DELETE /users/:id', () => {
     done();
   });
 
-})
+});
