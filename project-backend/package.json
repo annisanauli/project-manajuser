@@ -1,23 +1,14 @@
 {
   "name": "project-backend",
   "version": "1.0.0",
-<<<<<<< HEAD
-  "description": "This project was created with Node JS",
-=======
   "description": "",
-<<<<<<< HEAD
->>>>>>> test
-=======
->>>>>>> test
   "main": "App.js",
   "scripts": {
     "dev": "nodemon src/App.js",
     "test": "jest --forceExit --detectOpenHandles",
     "test:coverage": "jest --coverage --forceExit --detectOpenHandles"
   },
-  "keywords": [
-    "npm"
-  ],
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -29,16 +20,8 @@
   "devDependencies": {
     "cross-env": "^7.0.2",
     "jest": "^26.1.0",
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     "mocha": "^8.0.1",
     "nock": "^13.0.2",
->>>>>>> test
-=======
-    "mocha": "^8.0.1",
-    "nock": "^13.0.2",
->>>>>>> test
     "supertest": "^4.0.2"
   },
   "jest": {
