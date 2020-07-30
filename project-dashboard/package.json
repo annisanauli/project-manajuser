@@ -21,7 +21,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "test:coverage": "react-scripts test --coverage --watchAll=false",
-    "test:update": "react-scripts test --updateSnapshot"
+    "test:update": "react-scripts test --updateSnapshot",
+    "docs": "jsdoc -c jsdoc.conf.json"
   },
   "eslintConfig": {
     "extends": "react-app"
