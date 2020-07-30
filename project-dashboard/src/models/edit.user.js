@@ -4,8 +4,20 @@ import Config from '../config/config';
 
 class form extends Component{
 /**
+   * konstruktor kelas form edit user
    * 
-   * @description konstruktor untuk kelas form 
+   * @description konstruktor kelas form edit user untuk menginisialisasi atribut yang dibutuhkan pada kelas form
+   * 
+   * Pada state terdapat fields dan error. 
+   * fields berfungsi untuk menampung data inputan form.
+   * Sedangkan errors berfungsi untuk menampung data inputan form yang error.
+   * 
+   * userId  {Integer} variabel menampung id user
+   * dataUser sebuah objek untuk menampung data user yang akan diedit
+   * campName  {string} variabel menampung nama
+   * campEmail {string}  variabel menampung email
+   * campPassword {string} variabel menampung password
+   * campPhone {Integer} variabel menampung no handphone
    */
 constructor(props){
     super(props);
@@ -17,6 +29,12 @@ constructor(props){
     }
   }
 
+  /**
+   * getData
+   * 
+   * @description fungsi untuk mengambil data sesuai id pada fungsi onEdit yang ada di file read.user
+   * @param {Integer} id variabel menampung id 
+   */
   getData(id){
     this.setState({
       userId:id
@@ -39,23 +57,24 @@ constructor(props){
   }
 
   /**
-   * @description method untuk melakukan validasi setiap data yang diinput pada form create user seperti data tidak boleh kosong, dan syarat-syarat lainnya
-   * @param {string} campName variabel menampung nama
-   * @param {string} campEmail variabel menampung email
-   * @param {string} campPassword variabel menampung password
-   * @param {Integer} campPhone variabel menampung no handphone
+   * handleValidation
+   * 
+   * @description fungsi untuk melakukan validasi setiap data inputan pada form 
+   * 
+   * @return formIsValid
    */
   handleValidation(){
     let fields = this.state.fields;
     let errors = {};
     let formIsValid = true;
 
-    //Name
+    //mengecek inputan nama tidak boleh kosong
     if(!fields["campName"]){
       formIsValid = false;
       errors["campName"] = "Cannot be empty";
     }
 
+    //mengecek inputan nama berisi alfabet dan spasi
     if(typeof fields["campName"] !== "undefined"){
       if(!fields["campName"].match(/^[a-zA-Z\s]+$/)){
         formIsValid = false;
@@ -63,12 +82,13 @@ constructor(props){
       }      	
     }
 
-    //Email
+    //mengecek inputan email tidak boleh kosong
     if(!fields["campEmail"]){
       formIsValid = false;
       errors["campEmail"] = "Cannot be empty";
     }
 
+    //mengecek inputan email harus valid email address
     if(typeof fields["campEmail"] !== "undefined"){
       let lastAtPos = fields["campEmail"].lastIndexOf('@');
       let lastDotPos = fields["campEmail"].lastIndexOf('.');
@@ -79,12 +99,13 @@ constructor(props){
       }
     }
 
-    //Password
+    //mengecek inputan password tidak boleh kosong
     if(!fields["campPassword"]){
       formIsValid = false;
       errors["campPassword"] = "Cannot be empty";
     }
 
+    //mengecek inputan password harus berisi minimal 1 karakter, huruf besar, huruf kecil, angka, simbol
     if(typeof fields["campPassword"] !== "undefined"){
       if(!fields["campPassword"].match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/)){
         formIsValid = false;
@@ -92,12 +113,13 @@ constructor(props){
       }      	
     }
 
-    //Phone
+    //mengecek inputan nomor handphone tidak boleh kosong
     if(!fields["campPhone"]){
       formIsValid = false;
       errors["campPhone"] = "Cannot be empty";
     }
 
+    // mengecek inputan nomor handphone harus valid nomor handphone indonesia
     if(typeof fields["campPhone"] !== "undefined"){
       if(!fields["campPhone"].match(/^(0814|0815|0816|0855|0858|0856|0857|0827|0828|0811|0812|0821|0822|0851|0852|0853|0823|0817|0818|0819|0877|0878|0859|0831|0832|0833|0838|0881|0882|0883|0884|0885|0886|0887|0888|0889|0895|0896|0897|0898|0899)[0-9]{6,8}$/gm)){
         formIsValid = false;
@@ -105,13 +127,17 @@ constructor(props){
       }      	
     }
 
+    //apabila terdapat error maka akan kembali form create user
     this.setState({errors: errors});
     return formIsValid;
   }
 
   /**
-   * @description method untuk menyimpan data yang telah valid ke database
+   *handleSubmit
+   * 
+   * @description fungsi untuk menyimpan data yang telah valid pada fungsi handlevalidation ke database
    * @param {*} e menampung data yang telah valid
+   * @param {Integer} userId variabel menampung id
    */
   handleSubmit(e,userId){
     e.preventDefault();
