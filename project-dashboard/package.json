@@ -7,14 +7,7 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     "jsdoc-to-markdown": "^6.0.1",
->>>>>>> test
-=======
-    "jsdoc-to-markdown": "^6.0.1",
->>>>>>> test
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -28,7 +21,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "test:coverage": "react-scripts test --coverage --watchAll=false",
-    "test:update": "react-scripts test --updateSnapshot"
+    "test:update": "react-scripts test --updateSnapshot",
+    "docs": "jsdoc -c jsdoc.conf.json"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -46,9 +40,11 @@
     ]
   },
   "devDependencies": {
+    "better-docs": "^2.3.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "jest": "24.9.0",
+    "jsdoc": "^3.6.5",
     "react-test-renderer": "^16.13.1"
   }
 }
