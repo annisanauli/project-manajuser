@@ -42,8 +42,6 @@ $ npm install react-scripts --save
  
 //instalar sweetalert
 $ npm install --save sweetalert2
-// instalar sccs
-$ npm install node-sass
 ```
 
 Dokumentasi Fungsi
